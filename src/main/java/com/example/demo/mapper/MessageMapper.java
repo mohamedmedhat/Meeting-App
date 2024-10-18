@@ -1,4 +1,4 @@
-package com.example.demo.mapper.meeting;
+package com.example.demo.mapper;
 
 import com.example.demo.dto.request.CreateMessageRequestDto;
 import com.example.demo.model.Message;

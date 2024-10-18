@@ -3,7 +3,7 @@ package com.example.demo.service.user;
 import com.example.demo.dto.request.LoginInputRequestDto;
 import com.example.demo.dto.request.RegisterInputRequestDto;
 import com.example.demo.dto.response.UserResponseDto;
-import com.example.demo.mapper.user.UserMapper;
+import com.example.demo.mapper.UserMapper;
 import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.dto.response.LoginResponseDto;

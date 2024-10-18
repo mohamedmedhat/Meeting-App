@@ -1,4 +1,4 @@
-package com.example.demo.mapper.user;
+package com.example.demo.mapper;
 
 import com.example.demo.dto.request.RegisterInputRequestDto;
 import com.example.demo.dto.response.LoginResponseDto;
@@ -14,17 +14,16 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Component
-public class UserMapper implements IUserMapper {
+public class UserMapper {
 
     private final PasswordEncoder passwordEncoder;
 
 
-    @Override
     public String encodePassword(String password) {
         return passwordEncoder.encode(password);
     }
 
-    @Override
+
     public RegisterResponseDto toRegisterResponseDto(User user) {
         return new RegisterResponseDto(
                 user.getId(),
@@ -34,7 +33,7 @@ public class UserMapper implements IUserMapper {
         );
     }
 
-    @Override
+
     public User RegisterInputRequestToEntity(RegisterInputRequestDto dto) {
         String hashPassword = this.encodePassword(dto.getPassword());
         Set<String> upperCaseRoles = dto.getRoles().stream()
@@ -48,7 +47,7 @@ public class UserMapper implements IUserMapper {
         return user;
     }
 
-    @Override
+
     public User UserUpdateTOEntity(RegisterInputRequestDto dto, User user) {
         String hashPassword = this.encodePassword(dto.getPassword());
         Set<String> upperCaseRoles = dto.getRoles().stream()
@@ -61,7 +60,7 @@ public class UserMapper implements IUserMapper {
         return user;
     }
 
-    @Override
+
     public UserResponseDto toUserResponseDto(User user) {
         return new UserResponseDto(
                 user.getName(),
@@ -70,7 +69,7 @@ public class UserMapper implements IUserMapper {
         );
     }
 
-    @Override
+
     public LoginResponseDto toLoginResponseDto(UserResponseDto user, String token) {
         return new LoginResponseDto(
                 user,

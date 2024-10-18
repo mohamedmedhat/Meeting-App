@@ -31,13 +31,13 @@ public class UserController {
         return this.userService.login(userData);
     }
 
-    @PutMapping("update/{id}")
+    @PutMapping("{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public CompletableFuture<RegisterResponseDto> updateUser(@PathVariable("id") String id, @Valid @RequestBody RegisterInputRequestDto userData) {
         return this.userService.updateUser(id, userData);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public Boolean deleteUser(@PathVariable("id") String id) {
         return this.userService.deleteUser(id);

@@ -2,8 +2,8 @@ package com.example.demo.service.meeting;
 
 import com.example.demo.dto.request.CreateMeetingRequestDto;
 import com.example.demo.dto.request.CreateMessageRequestDto;
-import com.example.demo.mapper.meeting.MeetingMapper;
-import com.example.demo.mapper.meeting.MessageMapper;
+import com.example.demo.mapper.MeetingMapper;
+import com.example.demo.mapper.MessageMapper;
 import com.example.demo.model.Meeting;
 import com.example.demo.model.Message;
 import com.example.demo.model.User;
